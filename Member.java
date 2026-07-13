@@ -1,11 +1,17 @@
 public class Member extends User{
 
     private int borrowedBooksCount;
-    private final int MAX_BORROW_LIMIT =5;
+    private static final int MAX_BORROW_LIMIT =5;
+    public Member(String username, String contactInfo){
+        super(username, contactInfo);
+        this.borrowedBooksCount=0;
+    }
     
     @Override
     public void displayDashboard(){
-        System.out.println("Member Dashboard and Books Borrowed: " + borrowedBooksCount);
+        System.out.println("=== MEMBER DASHBOARD ===" );
+        System.out.println("Esteemed Member name: " + getName());
+        System.out.println("Number of books borrowed: "+ borrowedBooksCount );
     }
     @Override
     public boolean canBorrowBooks(){
